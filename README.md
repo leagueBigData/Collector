@@ -7,3 +7,4 @@ what you need...........<br>
 youll need api key from league of legends<br>
 python running on your machine<br>
 mongodb running on your machine<br>
+pymongo
