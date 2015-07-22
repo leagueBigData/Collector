@@ -1,9 +1,9 @@
 # Collector
 Collector used to gather data to populate the database
 
-using python
-
-what you need...........
-youll need api key from league of legends
-python running on your machine
-mongodb running on your machine
+using python<br>
+<br>
+what you need...........<br>
+youll need api key from league of legends<br>
+python running on your machine<br>
+mongodb running on your machine<br>
