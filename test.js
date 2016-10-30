@@ -1,12 +1,6 @@
-var myCallback = function(data) {
-	console.log('out usingItNow');
-  	console.log('got data: '+data);
-};
+var LaneBuilder = require('./SeasonBuilder');
 
-var usingItNow = function(callback) {
-	console.log('maube');
-  	callback('get it?');
-};
+var str = LaneBuilder.buildLanes(true, true, true, true,true,true, true, true, true,true);
 
 
-usingItNow(myCallback);
+console.log(str);
