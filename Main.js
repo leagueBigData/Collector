@@ -20,12 +20,16 @@ console.log(MatchListRequestBySummonerIdROB.URL());
 
 //just an iterator to display the data that was returned.
 var getOnlyMatches = function(data){
-	var matches = data;
-	for (var i = matches.length - 1; i >= 0; i --) {
-		console.log('match number : ' + i +'----------------');
-		console.log(matches[i]);
+	if(data == undefined){
+		console.log('There was an error..... WTF!?!?');
+	}else{
+		var matches = data;
+		for (var i = matches.length - 1; i >= 0; i --) {
+			console.log('match number : ' + i +'----------------');
+			console.log(matches[i]);
+		}
+		console.log('number of matches : ' + matches.length);
 	}
-	console.log('number of matches : ' + matches.length);
 };
 
 
