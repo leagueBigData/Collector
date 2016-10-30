@@ -1,40 +1,28 @@
 var config = require('./config');
-var http = require('https');
+var MatchListRequestBySummonerIdROB = require('./MatchListRequestBySummonerIdROB');
+var DataCollector = require('./DataCollector');
 
-console.log(config);
-var temp;
 
-var url = config.host + config.matchHistoryEP + config.start + '?' + config.apiKey
 
-http.get(url, function(res){
-    var body = '';
+// Here we create the query we are going to make to the api
+MatchListRequestBySummonerIdROB.setSummonerId(config.start);
 
-    res.on('data', function(chunk){
-        body += chunk;
-    });
 
-    res.on('end', function(){
-        var matchData = JSON.parse(body);
-        console.log("Got a response count: ", matchData.matches.length);
-        console.log("first ", matchData.matches[0]);
-        temp = matchData.matches;
-        getOnlyMatches();
-    });
-}).on('error', function(e){
-      console.log("Got an error: ", e);
-});
+//url we are going to be using
+console.log(MatchListRequestBySummonerIdROB.URL());
 
-console.log(temp + 'temp----------');
 
-var helo = function(){
-	console.log('helloo');
-};
-
-var getOnlyMatches = function(){
-	var matches = temp;
+//just an iterator to display the data that was returned.
+var getOnlyMatches = function(data){
+	var matches = data;
 	for (var i = matches.length - 1; i >= 0; i = i - 20) {
 		console.log('match number : ' + i + '----------------');
 		console.log(matches[i]);
 	}
 
 };
+
+
+// Here we use the Data collector to make the request to the api and 
+// return the data to the callback on getOnlyMatches
+DataCollector.CollectData(getOnlyMatches,MatchListRequestBySummonerIdROB.URL());
