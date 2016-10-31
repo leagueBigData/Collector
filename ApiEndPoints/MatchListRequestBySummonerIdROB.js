@@ -16,6 +16,7 @@ var SeasonBuilder = require('./../Builders/SeasonBuilder');
 
 
 var MatchListRequestBySummonerIdROB = {
+	name : 'MatchListRequestBySummonerIdROB',
 	host : config.host,
 	path : config.MatchListRequestBySummonerIdPath,
 	apiKey : config.apiKey,

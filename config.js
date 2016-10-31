@@ -1,5 +1,7 @@
 var config = {};
 
+config.debuger = true;
+
 config.start = '35241849';
 
 config.region = 'na';
