@@ -7,15 +7,16 @@ var QueueBuilder = {
 	rankedSolo5x5 : 'RANKED_SOLO_5x5'
 };
 
-QueueBuilder.buildString = function(teamBuilderDraftRanked5x5, rankedTeam5x5, rankedTeam3x3, rankedSolo5x5){
+QueueBuilder.buildString = function(queue){
 
-	if(teamBuilderDraftRanked5x5 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.teamBuilderDraftRanked5x5 + ',' };
-	if(rankedTeam5x5 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.rankedTeam5x5 + ',' };
-	if(rankedTeam3x3 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.rankedTeam3x3 + ',' };
-	if(rankedSolo5x5 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.rankedSolo5x5 + ',' };
+	if(queue.teamBuilderDraftRanked5x5 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.teamBuilderDraftRanked5x5 + ',' };
+	if(queue.rankedTeam5x5 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.rankedTeam5x5 + ',' };
+	if(queue.rankedTeam3x3 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.rankedTeam3x3 + ',' };
+	if(queue.rankedSolo5x5 == true){ QueueBuilder.str = QueueBuilder.str + QueueBuilder.rankedSolo5x5 + ',' };
 
+	if(str.length != 0){
 	QueueBuilder.str = QueueBuilder.str.slice(0,-1);// remove the last comma
-
+	}
 	return QueueBuilder.str;
 }
 

@@ -38,22 +38,16 @@ MatchListRequestBySummonerIdROB.setChampionIds = function(championIds){
 	MatchListRequestBySummonerIdROB.championIds = 'championIds=' + championIds + '&';
 };
 
-MatchListRequestBySummonerIdROB.setRankedQueues = function(teamBuilderDraftRanked5x5, rankedTeam5x5, 
-															rankedTeam3x3, rankedSolo5x5){
+MatchListRequestBySummonerIdROB.setRankedQueues = function(queue){
 
-	var str = QueueBuilder.buildString(teamBuilderDraftRanked5x5, rankedTeam5x5,
-										 rankedTeam3x3, rankedSolo5x5);
+	var str = QueueBuilder.buildString(queue);
 
 	MatchListRequestBySummonerIdROB.rankedQueues = 'rankedQueues=' + str + '&';
 };
 
-MatchListRequestBySummonerIdROB.setSeasons = function(preSeason3, season3, preSeason2014,
-														 season2014, preSeason2015, season2015,
-														 preSeason2016, season2016){
+MatchListRequestBySummonerIdROB.setSeasons = function(seasons){
 	
-	var str = SeasonBuilder.buildString(preSeason3, season3, preSeason2014,
-										 season2014, preSeason2015, season2015,
-										 preSeason2016, season2016);
+	var str = SeasonBuilder.buildString(seasons);
 	
 	MatchListRequestBySummonerIdROB.seasons = 'seasons=' + str + '&';
 };

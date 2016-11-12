@@ -8,16 +8,18 @@ var RoleBuilder = {
 	duoSupport : 'DUO_SUPPORT'
 };
 
-RoleBuilder.buildString = function(duo, none, solo, duoCarry, duoSupport){
+RoleBuilder.buildString = function(role){
 
-	if(duo == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.duo + ',' };
-	if(none == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.none + ',' };
-	if(solo == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.solo + ',' };
-	if(duoCarry == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.duoCarry + ',' };
-	if(duoSupport == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.duoSupport + ',' };
+	if(role.duo == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.duo + ',' };
+	if(role.none == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.none + ',' };
+	if(role.solo == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.solo + ',' };
+	if(role.duoCarry == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.duoCarry + ',' };
+	if(role.duoSupport == true){ RoleBuilder.str = RoleBuilder.str + RoleBuilder.duoSupport + ',' };
 
+	if(str.length != 0){
 	RoleBuilder.str = RoleBuilder.str.slice(0,-1);// remove the last comma
-
+	}
+	
 	return RoleBuilder.str;
 }
 

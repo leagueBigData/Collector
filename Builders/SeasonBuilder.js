@@ -11,20 +11,20 @@ var SeasonBuilder = {
 	season2016 : 'SEASON2016'
 };
 
-SeasonBuilder.buildString = function(preSeason3, season3, preSeason2014, season2014,
-										preSeason2015, season2015, preSeason2016, season2016){
+SeasonBuilder.buildString = function(season){
 
-	if(preSeason3 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason3 + ',' };
-	if(season3 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season3 + ',' };
-	if(preSeason2014 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason2014 + ',' };
-	if(season2014 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season2014 + ',' };
-	if(preSeason2015 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason2015 + ',' };
-	if(season2015 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season2015 + ',' };
-	if(preSeason2016 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason2016 + ',' };
-	if(season2016 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season2016 + ',' };
+	if(season.preSeason3 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason3 + ',' };
+	if(season.season3 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season3 + ',' };
+	if(season.preSeason2014 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason2014 + ',' };
+	if(season.season2014 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season2014 + ',' };
+	if(season.preSeason2015 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason2015 + ',' };
+	if(season.season2015 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season2015 + ',' };
+	if(season.preSeason2016 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.preSeason2016 + ',' };
+	if(season.season2016 == true){ SeasonBuilder.str = SeasonBuilder.str + SeasonBuilder.season2016 + ',' };
 
+	if(str.length != 0){
 	SeasonBuilder.str = SeasonBuilder.str.slice(0,-1);// remove the last comma
-
+	}
 	return SeasonBuilder.str;
 }
 

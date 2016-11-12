@@ -4,13 +4,13 @@ var http = require('https');
 
 var DataCollector  = {};
 
-DataCollector.StatusChecker = function(endPoint, code, matchData, callback){
+DataCollector.StatusChecker = function(endPoint, code, data, callback){
 
     if(code == 200){
         if(config.debuger){
             DataCollector.Logger(endPoint, code, 'OK');
         };
-        callback(matchData);
+        callback(data);
         return;
     };
 
@@ -41,7 +41,7 @@ DataCollector.StatusChecker = function(endPoint, code, matchData, callback){
 
     if(code == 429){
         DataCollector.Logger(endPoint, code, 'Rate limit exceeded');
-        setTimeout(DataCollector.CollectData(endPoint,callback),1000);
+        setTimeout(DataCollector.CollectData(endPoint,callback),10000000000000);
         return;
     };
 
@@ -82,8 +82,7 @@ DataCollector.CollectData = function(endPoint,callback){
     });
 
     res.on('end', function(){
-        var matchData = JSON.parse(body);
-        DataCollector.StatusChecker(endPoint, res.statusCode, JSON.parse(body).matches, callback);    
+        DataCollector.StatusChecker(endPoint, res.statusCode, JSON.parse(body), callback);    
     });
 }).on('error', function(e){
       console.log("Got an error: ", e);
